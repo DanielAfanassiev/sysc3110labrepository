@@ -13,6 +13,11 @@ public class BuddyInfo {
     public String getName(){
         return this.name;
     }
+
+    public void setName(String buddyName){
+        this.name = buddyName;
+
+    }
     public String getAddress(){
         return this.address;
     }

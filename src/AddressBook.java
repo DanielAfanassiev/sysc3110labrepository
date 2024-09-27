@@ -31,6 +31,8 @@ public class AddressBook {
         AddressBook myAddressBook = new AddressBook();
         myAddressBook.addBuddy(buddy);
         System.out.println(myAddressBook.getBuddy(0).getName());
+        myAddressBook.getBuddy(0).setName("Not Daniel");
+
         myAddressBook.removeBuddy(0);
 
     }
