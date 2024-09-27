@@ -1,21 +1,27 @@
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AddressBook {
-    ArrayList<BuddyInfo> buddyList;
+    private ArrayList<BuddyInfo> buddyList;
     public AddressBook(){
         buddyList = new ArrayList<>();
     }
 
     public void addBuddy(BuddyInfo buddy){
-        buddyList.add(buddy);
+        if(buddy!=null){
+            buddyList.add(buddy);
+        }
     }
     public BuddyInfo getBuddy(int index){
-        return buddyList.get(index);
+        if(index >= 0 && index <= buddyList.size()){
+            return buddyList.get(index);
+        }
+        return null;
     }
-    public void removeBuddy(BuddyInfo buddyToRemove) {
-        this.buddyList.remove(buddyToRemove);
+    public BuddyInfo removeBuddy(int index) {
+        if(index >= 0 && index <= buddyList.size()){
+            return this.buddyList.remove(index);
+        }
+        return null;
     }
     public static void main(String[] args){
         System.out.println("Address Book");
@@ -23,7 +29,7 @@ public class AddressBook {
         AddressBook myAddressBook = new AddressBook();
         myAddressBook.addBuddy(buddy);
         System.out.println(myAddressBook.getBuddy(0).getName());
-        myAddressBook.removeBuddy(buddy);
+        myAddressBook.removeBuddy(0);
 
     }
 }
